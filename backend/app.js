@@ -3,7 +3,7 @@ const bodyParser = require('body-parser'); //=> Importe 'body-parser'
 const mongoose = require('mongoose'); //=> importe 'mongoose'
 
 const stuffRoutes = require('./routes/stuff'); //=> Importe le fichier 'stuff.js'
-
+const userRoutes = require('./routes/user'); //=> Importe le fichier 'user.js'
 
 
 mongoose.connect('mongodb+srv://micka:190886@cluster0.wmgxu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', //=> Connection entre notre API et mongoose
@@ -25,5 +25,6 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 
 app.use('/api/stuff', stuffRoutes);
+app.use('/api/auth', userRoutes);
 
 module.exports = app;

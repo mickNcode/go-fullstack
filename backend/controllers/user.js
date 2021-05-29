@@ -1,6 +1,6 @@
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const User = require('../models/User');
+const bcrypt = require('bcrypt'); //=> Importe 'bcrypt'
+const jwt = require('jsonwebtoken');//=> Importe 'jsontoken'
+const User = require('../models/User');//=> Importe le fichier 'User.js'
 
 exports.signup = (req, res, next) => {
     bcrypt.hash(req.body.password,10) //=> Nombre de tour pour sécuriser le mot de passe 
